@@ -1,3 +1,17 @@
 <div class="test">
-  <h1>Hola mundo! {{tutorial.name}}</h1>
+  <h1>{{tutorial.message}}</h1>
+  <!-- Lista de Nombres -->
+  <div>
+    <h2>Nombres</h2>
+    <ol>
+      <li ng-repeat="user in tutorial.users">
+        <strong>id: </strong>{{user.id}} - <strong>name: </strong>{{user.name}}
+      </li>
+    </ol>
+
+    <h3>Agrega un nuevo usuario</h3>
+    <input type="text" ng-model="tutorial.newUser.id">
+    <input type="text" ng-model="tutorial.newUser.name">
+    <button ng-click="tutorial.addUSer()" type="button" class="btn btn-default">Agregar Usuario!</button>
+  </div>
 </div>

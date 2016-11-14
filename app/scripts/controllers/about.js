@@ -8,6 +8,7 @@
  * Controller of the angularOApp
  */
 angular.module('angularOApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.test = 'Test';
+  .controller('AboutCtrl', function () {
+    var about = this;
+    about.test = 'Test';
   });
