@@ -17,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -35,6 +36,11 @@ angular
         templateUrl: 'views/tutorial.html',
         controller: 'TutorialCtrl',
         controllerAs: 'tutorial'
+      })
+      .when('/todo', {
+        templateUrl: 'views/todo.html',
+        controller: 'TodoCtrl',
+        controllerAs: 'todo'
       })
       .otherwise({
         redirectTo: '/'
