@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularOApp')
-  .controller('TodoCtrl', function (localStorageService) {
+  .controller('TodoCtrl', function ($scope, localStorageService) {
     var todo = this;
     todo.addActivity = addActivity;
     todo.cleanTodo = cleanTodo;
@@ -19,19 +19,17 @@ angular.module('angularOApp')
      * }
      */
 
-    todo.$watchCollection('todo.activities', function (){
+    $scope.$watchCollection('todo.activities', function (){
       localStorageService.set('angular-todo', todo.activities);
     });
 
     function addActivity () {
       todo.activities.push(todo.newActivity);
       todo.newActivity = {};
-      // localStorageService.set('angular-todo', todo.activities);
     }
 
     function cleanTodo () {
       todo.activities = [];
-      // localStorageService.set('angular-todo', todo.activities);
     }
 
 
