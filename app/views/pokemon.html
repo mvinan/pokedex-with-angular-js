@@ -1,10 +1,10 @@
 <div class="search">
-  <form class="form">
+  <form class="form" ng-submit="pk.fetchPokemon()">
     <div class="input-group search">
       <label>Nombre Pokemon o Número de Pokemon</label>
       <div class="search-box">
         <input id="searchPokemon" ng-model="pk.inputSearch" class="form-control" type="text" placeholder="Pikachu / 25">
-        <button class="btn btn-primary" type="submit" ng-click="pk.searchNewPokemon()">Buscar Pokemon</button>
+        <button class="btn btn-primary" type="submit">Buscar Pokemon</button>
       </div>
     </div>
   </form>
