@@ -76,3 +76,10 @@ app.controller('PokemonController', function ($http) {
     pk.nOfImages = nOfImages;
 
   });
+
+  app.directive('pkData', function(){
+    return {
+      restrict: 'E', //Elemento HTML
+      templateUrl: 'views/partials/pokemon-data.html', // Mostramos donde extraemos el contenido
+    };
+  });
