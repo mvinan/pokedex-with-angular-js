@@ -77,9 +77,9 @@ app.controller('PokemonController', function ($http) {
 
   });
 
-  app.directive('pkData', function(){
-    return {
-      restrict: 'E', //Elemento HTML
-      templateUrl: 'views/partials/pokemon-data.html', // Mostramos donde extraemos el contenido
-    };
-  });
+  // app.directive('pkData', function(){
+  //   return {
+  //     restrict: 'E', //Elemento HTML
+  //     templateUrl: 'views/partials/pokemon-data.html', // Show html the content
+  //   };
+  // });
