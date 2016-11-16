@@ -236,4 +236,14 @@ body {
 
 .pokeInfo{
   margin-bottom: 30px;
+
+  .panel-body{
+    min-height: 380px;
+  }
+
+  .images{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
 }

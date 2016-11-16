@@ -1,5 +1,5 @@
 <div class="search">
-  <form class="form" ng-submit="pk.fetchPokemon()">
+  <form class="form" ng-submit="pk.searchNewPokemon()">
     <div class="input-group search">
       <label>Nombre Pokemon o Número de Pokemon</label>
       <div class="search-box">
@@ -12,40 +12,41 @@
 
 <div ng-class="{ hidden : !pk.loading }" class="loader">Loading...</div>
 <div ng-if="pk.errMessage" class="text-danger">No existe este pokemon! Verifica el nombre que ingresaste…</div>
-<div class="pokeInfo" ng-show="pk.showPokeInfo" ng-if="!pk.errMessage">
-  <h1>{{pk.pokemon.name | uppercase}} <span>#{{pk.pokemon.id}}</span></h1>
-  <div class="images">
-    <img ng-repeat="poke in pk.nOfImages(6)" src="http://play.pokemonshowdown.com/sprites/xyani/{{pk.pokemon.name | lowercase}}.gif" alt="">
-  </div>
-  <ul class="nav nav-tabs">
-    <li ng-class="{ active : pk.tab === 1 }" role="presentation"><a ng-click="pk.selectTab(1)" role="tab">Pokedex</a></li>
-    <li ng-class="{ active : pk.tab === 2 }" role="presentation"><a ng-click="pk.selectTab(2)" role="tab">Stats</a></li>
-    <li ng-class="{ active : pk.tab === 3 }" role="presentation"><a ng-click="pk.selectTab(3)" role="tab">Evolution</a></li>
-  </ul>
+<div class="pokeInfo panel panel-primary" ng-show="pk.showPokeInfo" ng-if="!pk.errMessage">
+  <div class="panel-heading">{{pk.pokemon.name | uppercase}} <span>#{{pk.pokemon.id}}</span></div>
+  <div class="panel-body">
+    <div class="well well-lg images">
+      <img ng-repeat="poke in pk.nOfImages(6)" src="http://play.pokemonshowdown.com/sprites/xyani/{{pk.pokemon.name | lowercase}}.gif" alt="">
+    </div>
+    <ul class="nav nav-tabs">
+      <li ng-class="{ active : pk.tab === 1 }" role="presentation"><a ng-click="pk.selectTab(1)" role="tab">Pokedex</a></li>
+      <li ng-class="{ active : pk.tab === 2 }" role="presentation"><a ng-click="pk.selectTab(2)" role="tab">Stats</a></li>
+      <li ng-class="{ active : pk.tab === 3 }" role="presentation"><a ng-click="pk.selectTab(3)" role="tab">Evolution</a></li>
+    </ul>
 
-  <div ng-init="pk.tab" clas="tab-content">
-    <div ng-show="pk.tab === 1">
-      <div>Type: <span ng-repeat="type in pk.pokemon.type" class="label type-{{type | lowercase}} ">{{type}}</span></div>
-      <div>Height: <span>{{pk.pokemon.height}}</span></div>
-      <div>Weight: <span>{{pk.pokemon.weight}}</span></div>
-      <div>
-        <h5>Abilities:</h5>
+    <div ng-init="pk.tab" clas="tab-content">
+      <div ng-show="pk.tab === 1">
+        <div>Type: <span ng-repeat="type in pk.pokemon.type" class="label type-{{type | lowercase}} ">{{type}}</span></div>
+        <div>Height: <span>{{pk.pokemon.height}}</span></div>
+        <div>Weight: <span>{{pk.pokemon.weight}}</span></div>
+        <div>
+          <h5>Abilities:</h5>
+          <ul>
+            <li ng-repeat="ability in pk.pokemon.abilities">{{ability}}</li>
+          </ul>
+        </div>
+      </div>
+      <div ng-show="pk.tab === 2">
+        <h5>Stats:</h5>
         <ul>
-          <li ng-repeat="ability in pk.pokemon.abilities">{{ability}}</li>
+          <li ng-repeat="pokeStat in pk.pokemon.stats">{{pokeStat.stat.name}}: <small class="label stat-{{pokeStat.stat.name}}">{{pokeStat.base_stat}}</small></li>
         </ul>
       </div>
-    </div>
-    <div ng-show="pk.tab === 2">
-      <h5>Stats:</h5>
-      <ul>
-        <li ng-repeat="pokeStat in pk.pokemon.stats">{{pokeStat.stat.name}}: <small class="label stat-{{pokeStat.stat.name}}">{{pokeStat.base_stat}}</small></li>
-      </ul>
-    </div>
 
-    <div ng-show="pk.tab === 3">
-      <h5>Evoluciones:</h5>
-      <p>Estamos trabajando en este tab</p>
+      <div ng-show="pk.tab === 3">
+        <h5>Evoluciones:</h5>
+        <p>Estamos trabajando en este tab</p>
+      </div>
     </div>
   </div>
-
 </div>

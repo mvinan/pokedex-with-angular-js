@@ -21,11 +21,9 @@ app.controller('PokemonController', function ($http) {
     }
 
     function fetchPokemon (name) {
+      var pokeName = name.trim().toLowerCase();
       pk.errMessage = false;
       pk.loading = true;
-      pk.showPokeInfo = false;
-      name = pk.inputSearch;
-      var pokeName = name.trim().toLowerCase();
       $http.get(pk.url+ 'pokemon/' + pokeName)
         .then(function(poke){
           pk.loading = false;
