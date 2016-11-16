@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('angularOApp')
-  .controller('TodoCtrl', function ($scope, localStorageService) {
+  .controller('TodoController', function ($scope, localStorageService) {
     var todo = this;
-    todo.addActivity = addActivity;
-    todo.cleanTodo = cleanTodo;
 
     if(localStorageService.get('angular-todo')){
       todo.activities = localStorageService.get('angular-todo');
@@ -32,5 +30,11 @@ angular.module('angularOApp')
       todo.activities = [];
     }
 
+    function clicked (e) {
+      console.log('clicked', e);
+    }
 
+    todo.addActivity = addActivity;
+    todo.cleanTodo = cleanTodo;
+    todo.clicked = clicked;
   });

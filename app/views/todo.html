@@ -1,6 +1,6 @@
 <h1>TODO</h1>
 <ul>
-  <li ng-repeat="activity in todo.activities">
+  <li ng-repeat="activity in todo.activities" ng-click="todo.clicked($event)">
     {{activity.description}} | {{activity.date | date:'short'}}
   </li>
 </ul>

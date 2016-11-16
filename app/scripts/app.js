@@ -39,8 +39,13 @@ angular
       })
       .when('/todo', {
         templateUrl: 'views/todo.html',
-        controller: 'TodoCtrl',
+        controller: 'TodoController',
         controllerAs: 'todo'
+      })
+      .when('/pokedex', {
+        templateUrl: 'views/pokemon.html',
+        controller: 'PokemonController',
+        controllerAs: 'pk'
       })
       .otherwise({
         redirectTo: '/'
