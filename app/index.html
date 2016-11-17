@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/flaty.min.css">
     <!-- endbuild -->
   </head>
   <body ng-app="angularOApp">
@@ -44,6 +45,7 @@
               <li><a ng-href="#/">Contact</a></li>
               <li><a ng-href="#/tutorial">Tutorial</a></li>
               <li><a ng-href="#/todo">TODO</a></li>
+              <li><a ng-href="#/pokedex/search">Search Pokemon</a></li>
               <li><a ng-href="#/pokedex">Pokedex</a></li>
             </ul>
           </div>
@@ -97,10 +99,15 @@
         <script src="scripts/controllers/tutorial.js"></script>
         <script src="scripts/controllers/todo.js"></script>
         <script src="scripts/controllers/pokemon.js"></script>
-        <!-- directives -->
+        <script src="scripts/controllers/pokedex.js"></script>
+        <script src="scripts/controllers/pokemon-by-name.js"></script>
+        <!-- Directives -->
         <script src="scripts/directives/pk-data.js"></script>
-        <!-- filters-->
+        <!-- Filters -->
         <script src="scripts/filters/capitalizer.js"></script>
+        <!-- Services -->
+        <script src="scripts/services/pokedex-service.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

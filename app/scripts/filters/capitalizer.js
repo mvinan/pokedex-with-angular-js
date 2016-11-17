@@ -1,11 +1,18 @@
 'use strict';
 
 angular.module('angularOApp')
-  .filter('capitalizer', function(){
-    return function(text){
-      text = text.toString();
-      var firstletter = text.split('')[0].toUpperCase();
-      var otherletters = text.slice(1);
-      return firstletter + otherletters;
+  .filter('capitalizer', ['$filter', function($filter){
+    return function(input){
+      input = input.toString();
+      var firstletter = input.split('')[0].toUpperCase();
+      var otherletters = input.slice(1);
+      var capitalizer = firstletter + otherletters;
+      return $filter('normalizer')(capitalizer);
+    };
+  }])
+  .filter('normalizer', function(){
+    return function(input){
+      var newvalue = input.replace(/\W/g, ' ');
+      return newvalue;
     };
   });

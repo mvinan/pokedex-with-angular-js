@@ -29,7 +29,7 @@
       <div ng-show="pk.tab === 2">
         <h5>{{'stats' | capitalizer}}:</h5>
         <ul>
-          <li ng-repeat="pokeStat in pk.pokemon.stats">{{pokeStat.stat.name}}: <small class="label stat-{{pokeStat.stat.name}}">{{pokeStat.base_stat}}</small></li>
+          <li ng-repeat="pokeStat in pk.pokemon.stats">{{pokeStat.stat.name | capitalizer}}: <small class="label stat-{{pokeStat.stat.name}}">{{pokeStat.base_stat}}</small></li>
         </ul>
       </div>
 

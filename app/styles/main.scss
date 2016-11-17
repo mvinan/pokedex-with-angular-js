@@ -247,3 +247,19 @@ body {
     overflow: hidden;
   }
 }
+
+.pokemonList {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  &-pokemon {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}

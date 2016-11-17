@@ -2,9 +2,10 @@
 
 var app = angular.module('angularOApp');
 
-app.controller('PokemonController', function ($http) {
+app.controller('PokemonController', function ($http, $routeParams) {
     var pk = this;
 
+    var params = $routeParams.name;
     pk.url = 'http://pokeapi.co/api/v2/';
     pk.tab = 1;
     pk.pokemon = {};
@@ -67,6 +68,13 @@ app.controller('PokemonController', function ($http) {
       }
 
       return times;
+    }
+
+     if(params){
+      pk.pokeName = params;
+      pk.showPokeInfo = false;
+      pk.tab = 1;
+      fetchPokemon(pk.pokeName);
     }
 
     pk.selectTab = selectTab;

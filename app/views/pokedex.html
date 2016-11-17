@@ -1,0 +1,10 @@
+<h1>This is the Pokedex</h1>
+<div class="container">
+  <div ng-class="{ hidden : pkdex.loading }" class="loader">Loading...</div>
+  <ul ng-if="pkdex.loaded" class="pokemonList">
+    <li ng-repeat="poke in pkdex.pokemons" class="pokemonList-pokemon">
+      <img src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
+      <a href="#/pokemon/{{poke.name}}">{{poke.name}}</a>
+    </li>
+  </ul>
+</div>

@@ -18,7 +18,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'LocalStorageModule'
+    'LocalStorageModule',
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -43,6 +43,16 @@ angular
         controllerAs: 'todo'
       })
       .when('/pokedex', {
+        templateUrl: 'views/pokedex.html',
+        controller: 'PokedexController',
+        controllerAs: 'pkdex'
+      })
+      .when('/pokemon/:name', {
+        templateUrl: 'views/poke.html',
+        controller: 'PokemonController',
+        controllerAs: 'pk'
+      })
+      .when('/pokedex/search', {
         templateUrl: 'views/pokemon.html',
         controller: 'PokemonController',
         controllerAs: 'pk'
