@@ -2,7 +2,7 @@
 
 angular
   .module('angularOApp')
-  .factory('pokemonService', ['$http','$q', '$filter',function($http, $q, $filter){
+  .factory('pokemonService', ['$http', '$q', function($http, $q){
     function all(n){
       if(n === null || n === undefined){
         n = 151;
@@ -33,8 +33,24 @@ angular
       return deferred.promise;
     }
 
+    function byType(type){
+      type = type.toLowerCase();
+      var deferred = $q.defer();
+
+      $http.get('http://pokeapi.co/api/v2/type/'+ type)
+        .success(function(data){
+          deferred.resolve(data.pokemon);
+        })
+        .catch(function(){
+          deferred.reject();
+        });
+
+      return deferred.promise;
+    }
+
     return {
       all: all,
-      byName: byName
+      byName: byName,
+      byType: byType
     };
   }]);

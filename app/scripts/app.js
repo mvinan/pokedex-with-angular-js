@@ -57,6 +57,11 @@ angular
         controller: 'PokemonController',
         controllerAs: 'pk'
       })
+      .when('/pokedex/:type', {
+        templateUrl: 'views/pokedex.html',
+        controller: 'PokedexController',
+        controllerAs: 'pkdex'
+      })
       .otherwise({
         redirectTo: '/'
       });

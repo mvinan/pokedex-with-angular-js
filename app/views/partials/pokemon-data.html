@@ -16,7 +16,7 @@
 
     <div ng-init="pk.tab" clas="tab-content">
       <div ng-show="pk.tab === 1">
-        <div>Type: <span ng-repeat="type in pk.pokemon.type" class="label type-{{type | lowercase}} ">{{type}}</span></div>
+        <div>Type: <div ng-repeat="type in pk.pokemon.type" class="label type-{{type | lowercase}} "><a href="#/pokedex/{{type}}">{{type}}</a></div></div>
         <div>Height: <span>{{pk.pokemon.height}}</span></div>
         <div>Weight: <span>{{pk.pokemon.weight}}</span></div>
         <div>

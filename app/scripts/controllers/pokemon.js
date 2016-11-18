@@ -18,7 +18,7 @@ app.controller('PokemonController', function ($http, $routeParams) {
     function searchNewPokemon () {
       pk.showPokeInfo = false;
       pk.tab = 1;
-      pk.fetchPokemon(pk.inputSearch);
+      fetchPokemon(pk.inputSearch);
     }
 
     function fetchPokemon (name) {
@@ -84,10 +84,3 @@ app.controller('PokemonController', function ($http, $routeParams) {
     pk.nOfImages = nOfImages;
 
   });
-
-  // app.directive('pkData', function(){
-  //   return {
-  //     restrict: 'E', //Elemento HTML
-  //     templateUrl: 'views/partials/pokemon-data.html', // Show html the content
-  //   };
-  // });

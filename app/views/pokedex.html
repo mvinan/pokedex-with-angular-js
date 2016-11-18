@@ -1,10 +1,19 @@
-<h1>This is the Pokedex</h1>
+<h1>{{pkdex.title}}</h1>
+
+<pk-filter text="Buscar Por pokemon…"></pk-filter>
+
 <div class="container">
   <div ng-class="{ hidden : pkdex.loading }" class="loader">Loading...</div>
   <ul ng-if="pkdex.loaded" class="pokemonList">
-    <li ng-repeat="poke in pkdex.pokemons" class="pokemonList-pokemon">
-      <img src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
-      <a href="#/pokemon/{{poke.name}}">{{poke.name}}</a>
-    </li>
+    <div class="card col-xs-6 col-sm-2" ng-repeat="poke in pkdex.pokemons">
+    <!-- NOTE: This methos is using angular filter
+      <div class="card col-xs-6 col-sm-2" ng-repeat="poke in pkdex.pokemons | filter:pkdex.searchPokemon">-->
+      <li class="pokemonList-pokemon">
+        <img class="card-img-top" src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
+        <div class="card-block">
+          <a href="#/pokemon/{{poke.name}}"><h4 class="card-title">{{poke.name}}</h4></a>
+        </div>
+      </li>
+    </div>
   </ul>
 </div>
