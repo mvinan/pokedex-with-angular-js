@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularOApp')
-  .directive('pkFilter', ['pokemonService',function(pokemonService){
+  .directive('pkFilter', ['pokemonService',function(){
     return {
       restrict: 'E',
       templateUrl: 'views/partials/pk-filter.html',

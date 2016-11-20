@@ -2,7 +2,7 @@
 
 angular
   .module('angularOApp')
-  .controller('PokemonByNameController', ['$routeParams','pokemonService', function($routeParams, pokemonService){
+  .controller('PokemonByNameController', ['$routeParams','pokemonService', function ($routeParams, pokemonService) {
     var pk = this;
     var name = $routeParams.name;
 
