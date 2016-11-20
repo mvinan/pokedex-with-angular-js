@@ -6,7 +6,7 @@
 
   <div class="panel-body" ng-hide="pk.loading">
     <div class="well well-lg images">
-      <img ng-repeat="poke in pk.nOfImages(6)" src="http://play.pokemonshowdown.com/sprites/xyani/{{pk.pokemon.name | lowercase}}.gif" alt="">
+      <img ng-repeat="poke in pk.nOfImages(6)" ng-src="http://play.pokemonshowdown.com/sprites/xyani/{{pk.pokemon.name | lowercase}}.gif" alt="">
     </div>
     <ul class="nav nav-tabs">
       <li ng-class="{ active : pk.tab === 1 }" role="presentation"><a ng-click="pk.selectTab(1)" role="tab">Pokedex</a></li>

@@ -144,6 +144,12 @@ body {
 .active{
   color: red;
 }
+.isActive{
+  background: white;
+  a{
+    color: black !important;
+  }
+}
 
 [role='presentation']{
   cursor: pointer;

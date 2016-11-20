@@ -9,7 +9,7 @@
     <!-- NOTE: This methos is using angular filter
       <div class="card col-xs-6 col-sm-2" ng-repeat="poke in pkdex.pokemons | filter:pkdex.searchPokemon">-->
       <li class="pokemonList-pokemon">
-        <img class="card-img-top" src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
+        <img class="card-img-top" ng-src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
         <div class="card-block">
           <a href="#/pokemon/{{poke.name}}"><h4 class="card-title">{{poke.name | capitalizer}}</h4></a>
         </div>
