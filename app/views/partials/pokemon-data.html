@@ -4,7 +4,7 @@
     <pk-heading></pk-heading>
   </div>
 
-  <div class="panel-body">
+  <div class="panel-body" ng-hide="pk.loading">
     <div class="well well-lg images">
       <img ng-repeat="poke in pk.nOfImages(6)" src="http://play.pokemonshowdown.com/sprites/xyani/{{pk.pokemon.name | lowercase}}.gif" alt="">
     </div>

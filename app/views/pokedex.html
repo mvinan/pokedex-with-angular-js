@@ -1,17 +1,17 @@
-<h1>{{pkdex.title}}</h1>
+<h1><span ng-if="pkdex.hasNumber">{{pkdex.number}} - </span>{{pkdex.title}}</h1>
 
-<pk-filter text="Buscar Por pokemon…"></pk-filter>
+<pk-filter text="Busca por nombre…"></pk-filter>
 
 <div class="container">
   <div ng-class="{ hidden : pkdex.loading }" class="loader">Loading...</div>
-  <ul ng-if="pkdex.loaded" class="pokemonList">
+  <ul ng-hide="!pkdex.loaded" ng-if="pkdex.loaded" class="pokemonList">
     <div class="card col-xs-6 col-sm-2" ng-repeat="poke in pkdex.pokemons">
     <!-- NOTE: This methos is using angular filter
       <div class="card col-xs-6 col-sm-2" ng-repeat="poke in pkdex.pokemons | filter:pkdex.searchPokemon">-->
       <li class="pokemonList-pokemon">
         <img class="card-img-top" src="http://play.pokemonshowdown.com/sprites/xyani/{{poke.name | lowercase}}.gif" alt="">
         <div class="card-block">
-          <a href="#/pokemon/{{poke.name}}"><h4 class="card-title">{{poke.name}}</h4></a>
+          <a href="#/pokemon/{{poke.name}}"><h4 class="card-title">{{poke.name | capitalizer}}</h4></a>
         </div>
       </li>
     </div>

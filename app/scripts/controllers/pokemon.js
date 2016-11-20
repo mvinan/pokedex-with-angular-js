@@ -15,16 +15,12 @@ app.controller('PokemonController', function ($http, $routeParams) {
       pk.tab = tab;
     }
 
-    function searchNewPokemon () {
-      pk.showPokeInfo = false;
-      pk.tab = 1;
-      fetchPokemon(pk.inputSearch);
-    }
-
+    //Comentarios
     function fetchPokemon (name) {
       var pokeName = name.trim().toLowerCase();
       pk.errMessage = false;
       pk.loading = true;
+
       $http.get(pk.url+ 'pokemon/' + pokeName)
         .then(function(poke){
           pk.loading = false;
@@ -39,6 +35,12 @@ app.controller('PokemonController', function ($http, $routeParams) {
             throw err;
           }
         });
+    }
+
+    function searchNewPokemon () {
+      pk.showPokeInfo = false;
+      pk.tab = 1;
+      fetchPokemon(pk.inputSearch);
     }
 
     function distributeData (poke) {
@@ -70,7 +72,7 @@ app.controller('PokemonController', function ($http, $routeParams) {
       return times;
     }
 
-     if(params){
+    if(params){
       pk.pokeName = params;
       pk.showPokeInfo = false;
       pk.tab = 1;

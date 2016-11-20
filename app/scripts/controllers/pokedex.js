@@ -9,14 +9,16 @@ angular
 
   if(params){
     var param = $routeParams.type;
-    pokemonService.byType(param).then(function(data){
+    pokemonService.byType(param).then(function (data) {
 
-      var pokemonsByType = data.map(function(pokemon){
+      var pokemonsByType = data.map(function (pokemon) {
         return pokemon.pokemon;
       });
 
+      pkdex.hasNumber = true;
+      pkdex.number = data.length;
       pkdex.pokemons = pokemonsByType;
-      pkdex.title = data.length +' Pokemons de tipo: ' + $filter('capitalizer')(params);
+      pkdex.title = 'Pokemons de tipo: ' + $filter('capitalizer')(params);
       pkdex.loadedConfirm();
       pkdex.copyPokemons();
     });
@@ -44,7 +46,7 @@ angular
 
     if(pokemonInput.length > 0){
       pkdex.pokemons = pkdex.allPokemons.filter(function(pokemon){
-        if(pokemon.name.search(value) > -1){
+        if(pokemon.name.search(pokemonInput) > -1){
           return pokemon.name;
         }
       });
