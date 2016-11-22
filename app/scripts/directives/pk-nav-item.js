@@ -12,6 +12,7 @@
           name:'@'
         },
         link: function(scope, element, attrs, pkNavBar){
+          pkNavBar.setActiveItem('home');
           scope.makeActive = function(){
             pkNavBar.setActiveItem(scope.name);
           };

@@ -11,9 +11,7 @@ app.directive('pkData', function () {
 // Pk Heading only write a simple heading for each pokemon
 app.directive('pkHeading', function () {
   return {
-    restrict: 'E', // Directiva como atributo 'A'
+    restrict: 'E', // Para establecer una directiva como atributo 'A'
     templateUrl: 'views/partials/pk-heading.html',
-    // controller: 'PokemonController',
-    // controllerAs: 'pk'
   };
 });
