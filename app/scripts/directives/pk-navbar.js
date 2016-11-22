@@ -7,7 +7,7 @@
         templateUrl: 'views/partials/pk-navbar.html',
         controller: function(){
           var nav = this;
-
+          
           nav.getActiveItem = function (){
             return nav.activeItem;
           };

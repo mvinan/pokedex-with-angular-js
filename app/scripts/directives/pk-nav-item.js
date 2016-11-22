@@ -3,7 +3,8 @@
   angular.module('angularOApp')
     .directive('pkNavItem', function(){
       return {
-        restrict: 'A',
+        restrict: 'E',
+        replace: true,
         templateUrl: 'views/partials/pk-nav-item.html',
         require: '^pkNavBar',
         scope:{
@@ -11,7 +12,6 @@
           name:'@'
         },
         link: function(scope, element, attrs, pkNavBar){
-
           scope.makeActive = function(){
             pkNavBar.setActiveItem(scope.name);
           };

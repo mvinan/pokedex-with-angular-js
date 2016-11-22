@@ -1,1 +1,3 @@
-<a ng-click="makeActive()" ng-href="#{{to | lowercase}}">{{name | capitalizer}}</a>
+<li ng-class="{active: itemActive()}">
+  <a ng-click="makeActive()" ng-href="#{{to | lowercase}}">{{name | capitalizer}}</a>
+</li>
