@@ -37,18 +37,8 @@
             <a class="navbar-brand" href="#/">angularO</a>
           </div>
 
-          <div ng-controller="NavbarController as nav" class="collapse navbar-collapse" id="js-navbar-collapse">
+          <pk-nav-bar />
 
-            <ul class="nav navbar-nav">
-              <li ng-class="{isActive: nav.isCurrentRoute('/')}"><a href="#/">Home</a></li>
-              <li ng-class="{isActive: nav.isCurrentRoute('/about')}"><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-              <li ng-class="{isActive: nav.isCurrentRoute('/tutorial')}"><a ng-href="#/tutorial">Tutorial</a></li>
-              <li ng-class="{isActive: nav.isCurrentRoute('/todo')}"><a ng-href="#/todo">TODO</a></li>
-              <li ng-class="{isActive: nav.isCurrentRoute('/pokedex/search')}"><a ng-href="#/pokedex/search">Search Pokemon</a></li>
-              <li ng-class="{isActive: nav.isCurrentRoute('/pokedex')}"><a ng-href="#/pokedex">Pokedex</a></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -105,6 +95,8 @@
         <!-- Directives -->
         <script src="scripts/directives/pk-data.js"></script>
         <script src="scripts/directives/pk-filter.js"></script>
+        <script src="scripts/directives/pk-navbar.js"></script>
+        <script src="scripts/directives/pk-nav-item.js"></script>
         <!-- Filters -->
         <script src="scripts/filters/capitalizer.js"></script>
         <!-- Services -->
